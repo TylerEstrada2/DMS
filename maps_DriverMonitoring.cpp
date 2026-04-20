@@ -149,10 +149,10 @@ void MAPSDriverMonitoring::ProcessData(MAPSTimestamp ts, MAPS::InputElt<int64_t>
             }
             double elapsedHandsOff = (ts - m_handsOffStartTime) / 1000000.0;
 
-            if (elapsedHandsOff >= 9.0) {
+            if (elapsedHandsOff >= 5.0) {
                 handsOffWarningLevel = 2;
                 m_handsOffFirstWarningIssued = false;
-            } else if (elapsedHandsOff >= 4.0 && !m_handsOffFirstWarningIssued) {
+            } else if (elapsedHandsOff >= 5.0 && !m_handsOffFirstWarningIssued) {
                 handsOffWarningLevel = 1;
                 m_handsOffFirstWarningIssued = true;
             }
